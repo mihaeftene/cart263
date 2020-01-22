@@ -59,7 +59,24 @@ function paint(e) {
   // are passed to the callback function (resetPixel)
   setTimeout(resetPixel, PIXEL_REVERT_DELAY, pixel);
 }
-
+document.addEventListener('keydown', rotate);
+// the rotate function will be called everytime when the key is pressed
+function rotate(e) {
+  // all of the pixels will be affected (everything that has the class name "pixel")
+  let pixels = document.getElementsByClassName('pixel');
+  //if the right arrow key is pressed, then rotate clockwise direction
+  if (e.keyCode === 39) { //keycode found online
+    rotation = rotation + 1; // clockwise direction
+  }
+  //else, if theleft arrow is clicked the rotate counter clockwise
+  else if (e.keyCode === 37) { //keycode found online
+    rotation = rotation - 1; //counter clockwise direction
+  }
+  //making a for loop array so that all pixels are affected once its being rotated.
+  for (let i = 0; i < pixels.length; i++) {
+    pixels[i].style.transform = `rotate(${rotation}deg)`;
+  }
+}
 // resetPixel
 //
 // Takes the provided pixel element and sets its color back to default
