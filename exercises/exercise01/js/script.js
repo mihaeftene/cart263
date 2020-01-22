@@ -5,14 +5,14 @@
 Pixel painter
 Mihaela Eftene
 
-A small DOM-based program for "painting" on div-based pixels.
+Are you up to the challenge to clean the dirty blue screen? Well! make sure to use the pixels and clean all of the black pixels.
 
 *********************************************************************/
 
 // Constants
 const NUM_PIXELS = 1000;
 const PIXEL_REVERT_DELAY = 1000;
-const DEFAULT_COLOR = 'black';
+const DEFAULT_COLOR = 'blue'; //changed the default colour to blue to create another function. The user now can clean the black screen.
 const PAINT_COLOR = 'white';
 
 //declare the "global variable"
@@ -77,6 +77,7 @@ function rotate(e) {
     pixels[i].style.transform = `rotate(${rotation}deg)`;
   }
 }
+
 // resetPixel
 //
 // Takes the provided pixel element and sets its color back to default
