@@ -5,7 +5,7 @@
 Pixel painter
 Mihaela Eftene
 
-Are you up to the challenge to clean the dirty blue screen? Well! make sure to use the pixels and clean all of the black pixels.
+Are you up to the challenge to clean the dirty blue screen? Well! make sure to use the pixels (magic cleaner) and clean all of the dirt (black pixels).
 
 *********************************************************************/
 
@@ -61,6 +61,8 @@ function paint(e) {
 }
 document.addEventListener('keydown', rotate);
 // the rotate function will be called everytime when the key is pressed
+
+//rotate
 function rotate(e) {
   // all of the pixels will be affected (everything that has the class name "pixel")
   let pixels = document.getElementsByClassName('pixel');
