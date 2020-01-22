@@ -15,6 +15,8 @@ const PIXEL_REVERT_DELAY = 1000;
 const DEFAULT_COLOR = 'black';
 const PAINT_COLOR = 'white';
 
+//declare the "global variable"
+let rotation = 0;
 // Set up our starting function for when the page loads
 window.onload = setup;
 
