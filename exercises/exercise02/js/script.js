@@ -17,7 +17,7 @@ const REVEAL_POSSIBILITY = 0.1;
 const UPDATE_FREQUENCY = 500;
 
 // A place to store the jQuery selection of all spans
-let $spans;
+let $redacted;
 //add the secretsFound variable
 let $secretsFound = 0;
 //add the secretsTotal variable
@@ -30,8 +30,8 @@ $(document).ready(setup);
 //
 // Sets the click handler and starts the time loop
 function setup() {
-  // Save the selection of all spans (since we do stuff to them multiple times)
-  $spans = $('span');
+  // Save the selection of all redacted (since we do stuff to them multiple times)
+  $redacted = $('.redacted');
   //calculating the total number of secrets using "length"
   $secretsTotal = $('.secret').length;
   //after calculating, plase display the total number
@@ -60,7 +60,7 @@ function spanClicked() {
 // using jQuery's each() function which calls the specified function on _each_ of the
 // elements in the selection
 function update() {
-  $('.redacted').each(updateSpan);
+  $redacted.each(updateSpan);
 }
 
 // updateSpan()
