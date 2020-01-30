@@ -83,6 +83,8 @@ function hoverSecret(){
 $(this).addClass("found");
 //removes the mouseover using off
 $(this).off("mouseover");
+//increasing the counter variable by one ($ means variable)
+$secretsFound++;
 }
 
 // A version using anonymous functions if you're interested:
