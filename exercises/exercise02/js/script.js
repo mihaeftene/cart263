@@ -81,6 +81,8 @@ function updateSpan() {
 function hoverSecret(){
 //when mouseover apply the css style to the secrets that are found so they can be highlighted
 $(this).addClass("found");
+//removes the mouseover using off
+$(this).off("mouseover");
 }
 
 // A version using anonymous functions if you're interested:
