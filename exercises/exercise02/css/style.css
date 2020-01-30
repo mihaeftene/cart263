@@ -28,11 +28,16 @@ body {
 }
 /*secrets found that will highlighted*/
 .found{
-  background-color: #ffe500;
-  color: black;
+  background-image: linear-gradient(to bottom right, red, yellow);  color: black;
+  font-family: serif;
+  font-size: 20px; /*making the font-size bigger*/
   text-decoration: none;
 }
 /*set the text white (black bg on white text*/
 p{
+  color: white;
+}
+
+h1{
   color: white;
 }
