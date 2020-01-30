@@ -25,3 +25,8 @@ body {
   text-decoration: underline; /* underlined! */
   color: red; /* Emergency! */
 }
+/*secrets found that will highlighted*/
+.found{
+  background-color: #ffe500;
+  color: black;
+}
