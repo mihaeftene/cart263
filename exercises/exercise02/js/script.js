@@ -37,7 +37,8 @@ function setup() {
   //after calculating, plase display the total number
   $("#theSecretsTotal").text($secretsTotal);
   console.log($secretsTotal);
-
+  // mouseover for all secrets to be discovered
+  $('.secret').on("mouseover", hoverSecret);
   // Set a click handler on the spans (so we know when they're clicked)
   $spans.on('click', spanClicked);
   // Set an interval of 500 milliseconds to update the state of the page
@@ -73,6 +74,11 @@ function updateSpan() {
     $(this).removeClass('redacted');
     $(this).addClass('revealed');
   }
+}
+
+//hoverSecret()
+//function that relates to the mouseover
+function hoverSecret(){
 }
 
 // A version using anonymous functions if you're interested:
