@@ -60,7 +60,7 @@ function spanClicked() {
 // using jQuery's each() function which calls the specified function on _each_ of the
 // elements in the selection
 function update() {
-  $spans.each(updateSpan);
+  $('.redacted').each(updateSpan);
 }
 
 // updateSpan()
