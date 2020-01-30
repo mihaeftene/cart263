@@ -85,7 +85,7 @@ $(this).addClass("found");
 $(this).off("mouseover");
 //increasing the counter variable by one ($ means variable)
 $secretsFound++;
-//span that will contain the number of secrets found and will set the text to be the value of the counter variable
+//span that will contain the number of secrets found and will set the text to be the value of the counter variable.
 $("#found").text($secretsFound);
 }
 
