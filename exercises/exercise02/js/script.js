@@ -33,7 +33,11 @@ function setup() {
   // Save the selection of all spans (since we do stuff to them multiple times)
   $spans = $('span');
   //calculating the total number of secrets using "length"
-    $secretsTotal = $('.secret').length;
+  $secretsTotal = $('.secret').length;
+  //after calculating, plase display the total number
+  $("#theSecretsTotal").text($secretsTotal);
+  console.log($secretsTotal);
+
   // Set a click handler on the spans (so we know when they're clicked)
   $spans.on('click', spanClicked);
   // Set an interval of 500 milliseconds to update the state of the page
