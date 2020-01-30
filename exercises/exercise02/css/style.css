@@ -29,4 +29,5 @@ body {
 .found{
   background-color: #ffe500;
   color: black;
+  text-decoration: none;
 }
