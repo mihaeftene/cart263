@@ -3,7 +3,7 @@
 /*****************
 
 Raving Redactionist
-Pippin Barr
+Mihaela Eftene
 
 You are redacting a document, but it keeps becoming unredacted!
 Click the secret information to hide it, don't let all the
@@ -16,7 +16,7 @@ const REVEAL_POSSIBILITY = 0.1;
 // How often to update the spans (potentially revealing them)
 const UPDATE_FREQUENCY = 500;
 
-// A place to store the jQuery selection of all spans
+// A place to store the jQuery selection of all redacted
 let $redacted;
 //add the secretsFound variable
 let $secretsFound = 0;
@@ -40,7 +40,7 @@ function setup() {
   // mouseover for all secrets to be discovered
   $('.secret').on("mouseover", hoverSecret);
   // Set a click handler on the spans (so we know when they're clicked)
-  $spans.on('click', spanClicked);
+  $redacted.on('click', spanClicked);
   // Set an interval of 500 milliseconds to update the state of the page
   setInterval(update, UPDATE_FREQUENCY);
 };
@@ -78,15 +78,15 @@ function updateSpan() {
 
 //hoverSecret()
 //function that relates to the mouseover
-function hoverSecret(){
-//when mouseover apply the css style to the secrets that are found so they can be highlighted
-$(this).addClass("found");
-//removes the mouseover using off
-$(this).off("mouseover");
-//increasing the counter variable by one ($ means variable)
-$secretsFound++;
-//span that will contain the number of secrets found and will set the text to be the value of the counter variable.
-$("#found").text($secretsFound);
+function hoverSecret() {
+  //when mouseover apply the css style to the secrets that are found so they can be highlighted
+  $(this).addClass("found");
+  //removes the mouseover using off
+  $(this).off("mouseover");
+  //increasing the counter variable by one ($ means variable)
+  $secretsFound++;
+  //span that will contain the number of secrets found and will set the text to be the value of the counter variable.
+  $("#found").text($secretsFound);
 }
 
 // A version using anonymous functions if you're interested:
