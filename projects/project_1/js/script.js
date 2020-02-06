@@ -12,6 +12,10 @@ to match your project! Write JavaScript to do amazing things below!
 
 /*Declare our array of questions*/
 let essayQuestionsArray = ['An Analysis of the True Hero of A Lesson Before Dying, a Novel by Ernest J. Gaine', 'Contrast between two novels', 'What is technology these days', 'A Summary of the Book, Death of a Salesman by Arthur Miller'];
+/*declare my red paint variable*/
+let $dropRedPaint;
+/*declare the paper*/
+let $paper;
 
 /*what will show when the page is loaded*/
 $(document).ready(setup);
@@ -39,6 +43,36 @@ function setup() {
       }, 1000)
     }
   });
+
+  //lets do the paint!
+  // Get the paper element from the page
+  $paper = $('#text');
+  // Make it droppable
+  $paper.droppable({
+    // The drop option specifies a function to call when a drop is completed
+    drop: onDrop
+  });
+  $("#dropRedPaint").draggable({
+    start: function() {},
+    stop: function() {}
+  });
+}
+
+// onDrop(event,ui)
+//
+// Called when a draggable element is dragged over the droppable element (the animal)
+// In this instance it can only be the red Paint (it's the only draggable element).
+// The arguments 'event' and 'ui' are automatically passed by jQuery UI and contain
+// helpful information about the event.
+function onDrop(event, ui) {
+  console.log("You drop it");
+  // ui contains a reference to the draggable element that was just dropped in ui.draggable
+  // .remove() removes the select element from the page
+  ui.draggable.remove(); //.remove() would work here too
+  // Get the redPaint element from the page
+  //once you drop it, the clean paper will be gone and the red paper will appear
+  $("#text").removeClass("cleanPaper");
+  $("#text").addClass("redPaper");
 }
 
 //showNewEssayQuestion()-->Meant for triggering a question once the button has been clicked.
