@@ -73,3 +73,9 @@ h1 {
 .redPaper {
   background: url(../assets/images/lines.png), url(../assets/images/paperRed.png);
 }
+.liquidPaper{
+  background: url(../assets/images/lines.png), url(../assets/images/paper.png);
+}
+#essayQuestions{
+  height:100px;
+}
