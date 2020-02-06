@@ -10,9 +10,5 @@ to match your project! Write JavaScript to do amazing things below!
 
 *********************************************************************/
 
-$(document).ready(setup);
-
-
-function setup() {
-
-}
+/*Declare our array of questions*/
+let essayQuestionsArray = ['An Analysis of the True Hero of A Lesson Before Dying, a Novel by Ernest J. Gaine','Contrast between two novels', 'What is technology these days', 'A Summary of the Book, Death of a Salesman by Arthur Miller'];
