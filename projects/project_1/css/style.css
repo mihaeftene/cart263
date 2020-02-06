@@ -65,17 +65,18 @@ h1 {
   border-top: 1px solid #FFF;
   border-bottom: 1px solid #FFF;
 }
+
 /*clean paper-no paint*/
 .cleanPaper {
   background: url(../assets/images/lines.png), url(../assets/images/paper.png);
 }
+
 /*set the red paper*/
 .redPaper {
   background: url(../assets/images/lines.png), url(../assets/images/paperRed.png);
 }
-.liquidPaper{
-  background: url(../assets/images/lines.png), url(../assets/images/paper.png);
-}
+
+/*essay Questions*/
 #essayQuestions{
   height:100px;
 }

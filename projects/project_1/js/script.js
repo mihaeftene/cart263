@@ -19,6 +19,10 @@ let $paper;
 //declare the liquidPaper variable
 let $liquidPaper;
 
+// Sound effects for the experience
+let trollSFX = new Audio("assets/sounds/trollSong.mp3");
+let deleteAllSFX = new Audio("assets/sounds/deleteAll.wav");
+
 /*what will show when the page is loaded*/
 $(document).ready(setup);
 
@@ -56,15 +60,23 @@ function setup() {
   });
   //make the liquid paper draggable
   $("#dropLiquidPaper").draggable({
-    start: function() {},
-    stop: function() {}
+    start: function() {
+      deleteAllSFX.play();
+    },
+    stop: function() {
+    trollSFX.pause();
+    }
   });
   //make the red paint draggable
   $("#dropRedPaint").draggable({
-    start: function() {},
-    stop: function() {}
+    start: function() {
+      trollSFX.play();
+    },
+    stop: function(){
+    }
   });
 }
+
 
 // onDrop(event,ui)
 //
@@ -76,21 +88,20 @@ function onDrop(event, ui) {
   console.log("You drop it");
   // ui contains a reference to the draggable element that was just dropped in ui.draggable
   // .remove() removes the select element from the page
+  //check which id we are using. It allows to change between the liquid paper or the red paper.
   let id =ui.draggable.attr('id');
-  console.log(id);
+  //if the paper is clean and we are using the red paint, remove the clean paper and add the red paper
   if (id === "dropRedPaint"){
     $("#text").removeClass("cleanPaper");
     $("#text").addClass("redPaper");
   }
+  //else, if we use the liquidPaper, remove the red paper and replace it with clean paper.
   else if (id === "dropLiquidPaper"){
     $("#text").removeClass("redPaper");
     $("#text").addClass("cleanPaper");
-    console.log(id);
   }
 
   ui.draggable.remove(); //.remove() would work here too
-  // Get the redPaint element from the page
-  //once you drop it, the clean paper will be gone and the red paper will appear
 }
 
 //showNewEssayQuestion()-->Meant for triggering a question once the button has been clicked.
