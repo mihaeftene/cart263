@@ -16,7 +16,9 @@ let essayQuestionsArray = ['An Analysis of the True Hero of A Lesson Before Dyin
 /*what will show when the page is loaded*/
 $(document).ready(setup);
 function setup(){
-
+//set the timer for the questions when to change. In this case it will change every 10 seconds. Good luck! :)
+setInterval(showNewEssayQuestion,10000);
+//console.log(document.getElementById("text"));
 }
 
 //showNewEssayQuestion()-->Meant for triggering a question once the button has been clicked.
