@@ -7,7 +7,12 @@ body {
   padding:0px;
   font-family:Courier, monospace;
 }
-
+/*styling the title*/
+h1 {
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 80px;
+}
 /*setting the wrapper that will wrap the text area*/
 #wrapper {
 	width:700px;
@@ -55,6 +60,7 @@ body {
 	background-repeat:repeat-y,repeat;
 	-webkit-border-radius:0px;
 	border-radius:0px;
+  border-color: white;
 	border-top:1px solid #FFF;
 	border-bottom:1px solid #FFF;
 }
