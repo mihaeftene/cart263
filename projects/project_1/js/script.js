@@ -41,8 +41,6 @@ function setup() {
   });
 }
 
-
-
 //showNewEssayQuestion()-->Meant for triggering a question once the button has been clicked.
 function showNewEssayQuestion() {
   let randomQuestion = Math.floor(Math.random() * (essayQuestionsArray.length));
