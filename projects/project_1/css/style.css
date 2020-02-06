@@ -1,3 +1,60 @@
-body{
-  
+/*setting the body*/
+body {
+  background:white, repeat;
+  outline:none;
+  border:none;
+  margin:0px;
+  padding:0px;
+  font-family:Courier, monospace;
+}
+
+/*setting the wrapper that will wrap the text area*/
+#wrapper {
+	width:700px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:24px;
+	margin-bottom:100px;
+}
+
+/*styling of the paper and in what font size the user will write*/
+#paper {
+	color:#FFF;
+	font-size:20px;
+}
+
+/*setting the margins*/
+#margin {
+	margin-left:12px;
+	margin-bottom:20px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+/*text font for placeholder*/
+#text {
+	width:500px;
+	overflow:hidden;
+	background-color:#FFF;
+	color:#222;
+	font-family:Courier, monospace;
+	font-weight:normal;
+	font-size:24px;
+	resize:none;
+	line-height:40px;
+  padding-top:45px;
+	padding-bottom:34px;
+	padding-left:100px;
+	padding-right:100px;
+  /*this will show the paper texture where the user will type his essay*/
+  background: url(../assets/images/lines.png), url(../assets/images/paper.png);
+	background-repeat:repeat-y,repeat;
+	-webkit-border-radius:0px;
+	border-radius:0px;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid #FFF;
 }
