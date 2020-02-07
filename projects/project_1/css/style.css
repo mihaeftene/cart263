@@ -29,6 +29,7 @@ h1 {
 #paper {
   color: #FFF;
   font-size: 20px;
+  padding-top: 30px;
 }
 
 /*setting the margins*/
@@ -78,6 +79,11 @@ h1 {
 
 /*essay Questions*/
 #essayQuestions{
-  height:100px;
+  height:90px;
   font-size: 24px;
+}
+button{
+  font-family: Courier, monospace;
+  background-color: white;
+  text-decoration: none;
 }

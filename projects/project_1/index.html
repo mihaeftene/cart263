@@ -10,14 +10,8 @@
 
   <!-- jQuery and jQuery UI -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
   <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-
-  <!-- Library script(s) -->
-  <!-- Add your required libraries here either as local files or CDN-hosted files -->
-
 
   <!-- My script(s) -->
   <script src="js/script.js"></script>
@@ -25,24 +19,24 @@
 
 <body>
   <div id="wrapper">
-  <h1>Write on the specific topic</h1>
-  <!---Setting the random topic Essay Question. I wont be putting anything inside the div because i will later make my questions arrays--->
-  <div id="essayQuestions">
-  </div>
-  <!--Setting the button that will trigger a question--->
-  <button onclick="showNewEssayQuestion()">Give me a Topic Teacher!</button>
-  <!---Text Area where the user will type its essay--->
+    <h1>Chaos@Essay: Write on the topic given</h1>
+    <!---Setting the random topic Essay Question. I wont be putting anything inside the div because i will later make my questions arrays--->
+    <div id="essayQuestions">The question is...
+    </div>
+    <!--Setting the button that will trigger a question--->
+    <button onclick="showNewEssayQuestion()">Give me a Topic Teacher!</button>
+    <!---Text Area where the user will type its essay--->
     <!---Paper form where there will be text and a placeholder that indicates the writer what he should do.--->
     <form id="paper">
-    		<textarea placeholder="Be a good student and write ;)" id="text" class="cleanPaper" name="text" rows="4"></textarea>
-    		<br>
-    	</form>
-    <div class="paintBuckets">
+      <textarea placeholder="Be a good student and write ;)" id="text" class="cleanPaper" name="text" rows="4"></textarea>
+      <br>
+    </form>
+    <div class="draggableItems">
       <p>or be a rebel! If you know what I mean...(DROP THAT PAINT! :D)</p>
       <!--setting the red paint dot--->
-      <img id="dropRedPaint"src="assets/images/redPaint.png" alt="this is a red paint image">
-      <img id="dropLiquidPaper"src="assets/images/liquidPaper.png" alt="this is a liquidPaper">
-
+      <img id="dropRedPaint" src="assets/images/redPaint.png" alt="this is a red paint image">
+      <!--setting the LiquidPaper--->
+      <img id="dropLiquidPaper" src="assets/images/liquidPaper.png" alt="this is a liquidPaper">
 
     </div>
   </div>
