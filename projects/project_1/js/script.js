@@ -39,13 +39,11 @@ function setup() {
     let $theCharacterString = $(this)
     //if the number of characters is equal 50, then delete 1 character slowly.
     if ($theCharacterString.val().length >= 50) {
-      console.log("Oh no");
       if (deletingLetters === undefined) {
         deletingLetters = setInterval(function() {
           let letterString = $theCharacterString.val().substring(0, $theCharacterString.val().length - 1);
           $theCharacterString.val(letterString); //letters string
           typingDeleteSFX.play();
-          console.log("delete");
           //if statement. Once the number of characters is 0 clear the interval.
           if ($theCharacterString.val().length === 0) {
             clearInterval(deletingLetters);
@@ -90,7 +88,6 @@ function setup() {
 // The arguments 'event' and 'ui' are automatically passed by jQuery UI and contain
 // helpful information about the event.
 function onDrop(event, ui) {
-  console.log("You drop it");
   // ui contains a reference to the draggable element that was just dropped in ui.draggable
   // .remove() removes the select element from the page
   //check which id we are using. It allows to change between the liquid paper or the red paper.
