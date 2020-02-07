@@ -78,12 +78,18 @@ h1 {
 }
 
 /*essay Questions*/
-#essayQuestions{
-  height:90px;
+#essayQuestions {
+  height: 90px;
   font-size: 24px;
 }
-button{
+
+/*button*/
+button {
   font-family: Courier, monospace;
   background-color: white;
   text-decoration: none;
+  border-radius: 8px;
+  color: #fff !important;
+  background-color: #000 !important;
+  padding: 10px;
 }
