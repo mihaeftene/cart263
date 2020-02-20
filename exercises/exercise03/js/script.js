@@ -172,6 +172,7 @@ const NUM_OPTIONS = 7;
 // Get setup!
 $(document).ready(setup);
 
+
 // setup()
 //
 // We just start a new round right away!
@@ -181,16 +182,17 @@ function setup() {
   scoreDisplay();
 }
 
+
 // newRound()
 //
 // Generates a set of possible giveAnswers randomly from the set of animals
 // and adds buttons for each one. Then chooses the correct button randomly.
-function newRound(){
+function newRound() {
   $('.guess').remove();
   arrayAnswers = []; // empty giveAnswers array
 
   // for loop that will go through all of the animals options
-  for(let i = 0; i < NUM_OPTIONS; i++){
+  for (let i = 0; i < NUM_OPTIONS; i++) {
     //choose one giveAnswer out of 7
     let giveAnswer = animals[Math.floor(Math.random() * animals.length)];
     //add the giveAnswer button
@@ -201,6 +203,7 @@ function newRound(){
   //say the correct animal backwards
   sayBackwards(correctAnimal);
 }
+
 
 // sayBackwards(text)
 //
@@ -230,6 +233,7 @@ function sayBackwards(text) {
   responsiveVoice.speak(backwardsText, 'UK English Male', options);
 }
 
+
 // addButton(label)
 //
 // Creates a button using jQuery UI on a div with the label specified
@@ -251,13 +255,17 @@ function addButton(label) {
   return $button;
 }
 
+
+//scoreDisplay()
 // Created a tag to display the score
-function scoreDisplay(){
-  $("#score").text('SCORE:' +score);
+function scoreDisplay() {
+  $("#score").text('SCORE:' + score);
   let $setTheScore = $("#score");
   console.log($setTheScore)
 }
 
+
+//allVoiceCommands()
 //Annyang voice commands and actions
 function allVoiceCommands() {
   if (annyang) {
@@ -283,39 +291,38 @@ function allVoiceCommands() {
     //Let the user guess Command
     let speakGuess = {
       //name of the animal that was guessed
-      'I think it is *animal': function(animal){
-      console.log("animal"+animal);
-      // allow the animal to be detected even to lower case
-      if (animal.toLowerCase() === correctAnimal.toLowerCase()) {
-        $('.guess').each(checkIfGood);
-        score ++;
-        scoreDisplay(); //
+      'I think it is *animal': function(animal) {
+        console.log("animal" + animal);
+        // allow the animal to be detected even to lower case
+        if (animal.toLowerCase() === correctAnimal.toLowerCase()) {
+          $('.guess').each(checkIfGood);
+          score++;
+          scoreDisplay(); //
+        } else {
+          score = 0;
+          scoreDisplay();
+        }
+        //Refresh to a new round
+        setTimeout(newRound, 1000);
       }
-
-      else {
-        score = 0;
-        scoreDisplay();
-      }
-      //Refresh to a new round
-      setTimeout(newRound, 1000);
-    }
     };
-
     // All annyang Commands
     annyang.addCommands(giveUp);
     annyang.addCommands(speakGuess);
     annyang.addCommands(repeatAgain);
     annyang.start();
   }
-
 } // end of voice commands
 
+
+//checkIfGood()
 // Check through all of the boxes and see if its correct, hightlight the correct giveAnswer
 function checkIfGood() {
   if ($(this).text() == correctAnimal) {
     $(this).css("background-color", "#fcbe03");
   }
 }
+
 
 // handleGuess()
 //
@@ -338,6 +345,7 @@ function handleGuess() {
     sayBackwards(correctAnimal);
   }
 }
+
 
 // getRandomElement(array)
 //
