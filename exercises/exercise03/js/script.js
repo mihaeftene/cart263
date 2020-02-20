@@ -160,6 +160,8 @@ let animals = [
 
 // We need to track the correct button for each round
 let correctAnimal;
+//Answers array
+let arrayAnswers = [];
 // We also track the set of buttons
 let buttons = [];
 // How many possible answers there are per round
@@ -173,7 +175,7 @@ $(document).ready(setup);
 //
 // We just start a new round right away!
 function setup() {
-  // The annyang addCommands that will be linking the functions below
+  allVoiceCommands();
   newRound();
 }
 
@@ -182,8 +184,9 @@ function setup() {
 // Generates a set of possible answers randomly from the set of animals
 // and adds buttons for each one. Then chooses the correct button randomly.
 function newRound() {
-  // We empty the buttons array for the new round
-  buttons = [];
+  //if someone uses one of the commands, please remove the previous animals and change them for something else.
+  $('.guess').remove();
+  arrayAnswers = []; // empty answers array
   // Loop for each option we'll offter
   for (let i = 0; i < NUM_OPTIONS; i++) {
     // Choose the answer text randomly from the animals array
@@ -248,21 +251,28 @@ function addButton(label) {
   return $button;
 }
 
-//Annyang all voice commands & actions
-function allVoiceCommands(){
-  if (annyang){
-    //please reveal the correct answer once this command has been triggered
+//Annyang voice commands and actions
+function allVoiceCommands() {
+  if (annyang) {
+    // please reveal the correct Animal when the user says "I give up"
     let giveup = {
       'I give up': function() {
-        $('.guess').each(checkCorrect);
-        //score = 0;
-        console.log("wrong");
+        $('.guess').each(checkIfGood);
+        console.log("Oh So you give up?");
         setTimeout(newRound, 1000); //start a new round once displayed the correct answer
       }
-    }; // end of give up
+    }; //end of the "I give up" Command.
+
     // annyang commands and initialization
     annyang.addCommands(giveup);
     annyang.start();
+  }
+} // end of voice commands
+
+// Check through all of the boxes and see if its correct
+function checkIfGood() {
+  if ($(this).text() == correctAnimal) {
+    $(this).css("background-color", "#90ee90");
   }
 }
 
