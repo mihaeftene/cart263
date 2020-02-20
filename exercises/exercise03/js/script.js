@@ -269,8 +269,23 @@ function allVoiceCommands() {
       }
     }; // end of the "Repeat Again" Command.
 
+    //Let the user guess Command
+    let speakGuess = {
+      //name of the animal that was guessed
+      'I think it is *animal': function(animal){
+      console.log("animal"+animal);
+      // allow the animal to be detected even to lower case
+      if (animal.toLowerCase() === correctAnimal.toLowerCase()) {
+        $('.guess').each(checkIfGood);
+      }
+      //Refresh to a new round
+      setTimeout(newRound, 1000);
+    }
+    };
+
     // All annyang Commands
     annyang.addCommands(giveUp);
+    annyang.addCommands(speakGuess);
     annyang.addCommands(repeatAgain);
     annyang.start();
   }
