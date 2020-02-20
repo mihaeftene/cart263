@@ -261,10 +261,20 @@ function allVoiceCommands() {
       }
     }; //end of the "I give up" Command.
 
+    // Repeat the name of the animal again
+    let repeatAgain = {
+      'Repeat Again': function() {
+        console.log("repeat");
+        sayBackwards(correctAnimal);
+      }
+    }; // end of the "Repeat Again" Command.
+
     // All annyang Commands
     annyang.addCommands(giveUp);
+    annyang.addCommands(repeatAgain);
     annyang.start();
   }
+
 } // end of voice commands
 
 // Check through all of the boxes and see if its correct, hightlight the correct giveAnswer
@@ -282,7 +292,7 @@ function checkIfGood() {
 function handleGuess() {
   // If the button they clicked on has the same label as
   // the correct button, it must be the right giveAnswer...
-  if ($(this).text() === correctAnimal.text()) {
+  if ($(this).text() == correctAnimal) {
     // Remove all the buttons
     $('.guess').remove();
     // Start a new round
