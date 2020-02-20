@@ -164,7 +164,8 @@ let correctAnimal;
 let arrayAnswers = [];
 // We also track the set of buttons
 let buttons = [];
-// How many possible giveAnswers there are per round
+//set the score
+let score = 0;
 const NUM_OPTIONS = 7;
 //Declare variables for different types of voice commands:
 
@@ -177,6 +178,7 @@ $(document).ready(setup);
 function setup() {
   allVoiceCommands();
   newRound();
+  scoreDisplay();
 }
 
 // newRound()
@@ -249,6 +251,13 @@ function addButton(label) {
   return $button;
 }
 
+// Created a tag to display the score
+function scoreDisplay(){
+  $("#score").text('SCORE:' +score);
+  let $setTheScore = $("#score");
+  console.log($setTheScore)
+}
+
 //Annyang voice commands and actions
 function allVoiceCommands() {
   if (annyang) {
@@ -256,6 +265,8 @@ function allVoiceCommands() {
     let giveUp = {
       'I give up': function() {
         $('.guess').each(checkIfGood);
+        score = 0;
+        scoreDisplay();
         console.log("Oh So you give up?");
         setTimeout(newRound, 1000); //start a new round once displayed the correct giveAnswer
       }
@@ -277,6 +288,13 @@ function allVoiceCommands() {
       // allow the animal to be detected even to lower case
       if (animal.toLowerCase() === correctAnimal.toLowerCase()) {
         $('.guess').each(checkIfGood);
+        score ++;
+        scoreDisplay(); //
+      }
+
+      else {
+        score = 0;
+        scoreDisplay();
       }
       //Refresh to a new round
       setTimeout(newRound, 1000);
@@ -313,10 +331,11 @@ function handleGuess() {
     // Start a new round
     setTimeout(newRound, 1000);
   } else {
-    // Otherwise they were wrong, so shake the clicked button
-    $(this).effect('shake');
-    // And say the correct animal again to "help" them
-    sayBackwards(correctAnimal.text());
+    // if guessed animal is wrong shake and repeat correct animal name
+    $('.guess').effect('shake');
+    score = 0
+    scoreDisplay();
+    sayBackwards(correctAnimal);
   }
 }
 
