@@ -263,7 +263,7 @@ function allVoiceCommands() {
 
     // Repeat the name of the animal again
     let repeatAgain = {
-      'Repeat Again': function() {
+      'Say it again': function() {
         console.log("repeat");
         sayBackwards(correctAnimal);
       }
