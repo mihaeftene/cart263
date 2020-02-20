@@ -164,8 +164,8 @@ let correctAnimal;
 let arrayAnswers = [];
 // We also track the set of buttons
 let buttons = [];
-// How many possible answers there are per round
-const NUM_OPTIONS = 5;
+// How many possible giveAnswers there are per round
+const NUM_OPTIONS = 7;
 //Declare variables for different types of voice commands:
 
 // Get setup!
@@ -181,25 +181,23 @@ function setup() {
 
 // newRound()
 //
-// Generates a set of possible answers randomly from the set of animals
+// Generates a set of possible giveAnswers randomly from the set of animals
 // and adds buttons for each one. Then chooses the correct button randomly.
-function newRound() {
-  //if someone uses one of the commands, please remove the previous animals and change them for something else.
+function newRound(){
   $('.guess').remove();
-  arrayAnswers = []; // empty answers array
-  // Loop for each option we'll offter
-  for (let i = 0; i < NUM_OPTIONS; i++) {
-    // Choose the answer text randomly from the animals array
-    let answer = getRandomElement(animals);
-    // Add a button with this label
-    let $button = addButton(answer);
-    // Add this button to the buttons array
-    buttons.push($button);
+  arrayAnswers = []; // empty giveAnswers array
+
+  // for loop that will go through all of the animals options
+  for(let i = 0; i < NUM_OPTIONS; i++){
+    //choose one giveAnswer out of 7
+    let giveAnswer = animals[Math.floor(Math.random() * animals.length)];
+    //add the giveAnswer button
+    addButton(giveAnswer);
+    arrayAnswers.push(giveAnswer);
   }
-  // Choose a random button from the buttons array as our correct button
-  correctAnimal = getRandomElement(buttons);
-  // Say the label (text) on this button
-  sayBackwards(correctAnimal.text());
+  correctAnimal = arrayAnswers[Math.floor(Math.random() * arrayAnswers.length)];
+  //say the correct animal backwards
+  sayBackwards(correctAnimal);
 }
 
 // sayBackwards(text)
@@ -255,24 +253,24 @@ function addButton(label) {
 function allVoiceCommands() {
   if (annyang) {
     // please reveal the correct Animal when the user says "I give up"
-    let giveup = {
+    let giveUp = {
       'I give up': function() {
         $('.guess').each(checkIfGood);
         console.log("Oh So you give up?");
-        setTimeout(newRound, 1000); //start a new round once displayed the correct answer
+        setTimeout(newRound, 1000); //start a new round once displayed the correct giveAnswer
       }
     }; //end of the "I give up" Command.
 
-    // annyang commands and initialization
-    annyang.addCommands(giveup);
+    // All annyang Commands
+    annyang.addCommands(giveUp);
     annyang.start();
   }
 } // end of voice commands
 
-// Check through all of the boxes and see if its correct
+// Check through all of the boxes and see if its correct, hightlight the correct giveAnswer
 function checkIfGood() {
   if ($(this).text() == correctAnimal) {
-    $(this).css("background-color", "#90ee90");
+    $(this).css("background-color", "#fcbe03");
   }
 }
 
@@ -283,7 +281,7 @@ function checkIfGood() {
 // if not indicates it was incorrect
 function handleGuess() {
   // If the button they clicked on has the same label as
-  // the correct button, it must be the right answer...
+  // the correct button, it must be the right giveAnswer...
   if ($(this).text() === correctAnimal.text()) {
     // Remove all the buttons
     $('.guess').remove();
