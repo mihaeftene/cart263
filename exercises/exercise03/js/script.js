@@ -3,7 +3,7 @@
 /*****************
 
 Slamina
-Alaehim Enetfe - Mihaela Eftene
+Aleahim Enetfe - Mihaela Eftene
 
 A simple guessing game based on voice synthesis. The computer reads out an
 animal name, but it reads it backwards. The user selects the animal they
@@ -159,11 +159,12 @@ let animals = [
 ];
 
 // We need to track the correct button for each round
-let $correctButton;
+let correctAnimal;
 // We also track the set of buttons
 let buttons = [];
 // How many possible answers there are per round
 const NUM_OPTIONS = 5;
+//Declare variables for different types of voice commands:
 
 // Get setup!
 $(document).ready(setup);
@@ -172,6 +173,7 @@ $(document).ready(setup);
 //
 // We just start a new round right away!
 function setup() {
+  // The annyang addCommands that will be linking the functions below
   newRound();
 }
 
@@ -192,9 +194,9 @@ function newRound() {
     buttons.push($button);
   }
   // Choose a random button from the buttons array as our correct button
-  $correctButton = getRandomElement(buttons);
+  correctAnimal = getRandomElement(buttons);
   // Say the label (text) on this button
-  sayBackwards($correctButton.text());
+  sayBackwards(correctAnimal.text());
 }
 
 // sayBackwards(text)
@@ -246,6 +248,24 @@ function addButton(label) {
   return $button;
 }
 
+//Annyang all voice commands & actions
+function allVoiceCommands(){
+  if (annyang){
+    //please reveal the correct answer once this command has been triggered
+    let giveup = {
+      'I give up': function() {
+        $('.guess').each(checkCorrect);
+        //score = 0;
+        console.log("wrong");
+        setTimeout(newRound, 1000); //start a new round once displayed the correct answer
+      }
+    }; // end of give up
+    // annyang commands and initialization
+    annyang.addCommands(giveup);
+    annyang.start();
+  }
+}
+
 // handleGuess()
 //
 // Checks whether this was the correct guess (button) and
@@ -254,17 +274,16 @@ function addButton(label) {
 function handleGuess() {
   // If the button they clicked on has the same label as
   // the correct button, it must be the right answer...
-  if ($(this).text() === $correctButton.text()) {
+  if ($(this).text() === correctAnimal.text()) {
     // Remove all the buttons
     $('.guess').remove();
     // Start a new round
     setTimeout(newRound, 1000);
-  }
-  else {
+  } else {
     // Otherwise they were wrong, so shake the clicked button
     $(this).effect('shake');
     // And say the correct animal again to "help" them
-    sayBackwards($correctButton.text());
+    sayBackwards(correctAnimal.text());
   }
 }
 
