@@ -167,7 +167,6 @@ let buttons = [];
 //set the score
 let score = 0;
 const NUM_OPTIONS = 7;
-//Declare variables for different types of voice commands:
 
 // Get setup!
 $(document).ready(setup);
@@ -221,13 +220,11 @@ function sayBackwards(text) {
   // (We do this all in one line using "chaining" because .split() returns an array for
   // for .reverse() to work on, and .reverse() returns an array for .join() to work on.)
   let backwardsText = text.split('').reverse().join('');
-
   // Set some random numbers for the voice's pitch and rate parameters for a bit of fun
   let options = {
     pitch: Math.random(),
     rate: Math.random()
   };
-
   // Use ResponsiveVoice to speak the string we generated, with UK English Male voice
   // and the options we just specified.
   responsiveVoice.speak(backwardsText, 'UK English Male', options);
