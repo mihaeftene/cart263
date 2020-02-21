@@ -250,7 +250,7 @@ function addButton(label) {
   // Listen for a click on the button which means the user has guessed
   $button.on('click', handleGuess);
   // Finally, add the button to the page so we can see it
-  $('body').append($button);
+  $('.guessWho').append($button);
   // Return the button
   return $button;
 }
@@ -319,7 +319,7 @@ function allVoiceCommands() {
 // Check through all of the boxes and see if its correct, hightlight the correct giveAnswer
 function checkIfGood() {
   if ($(this).text() == correctAnimal) {
-    $(this).css("background-color", "#fcbe03");
+    $(this).css("background-color", "#25e000");
   }
 }
 

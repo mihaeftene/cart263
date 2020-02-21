@@ -1,6 +1,8 @@
 body {
   height: 100%;
   width: 100%;
+  background-color: black;
+
   /* overflow: hidden; */
 }
 
@@ -8,4 +10,38 @@ body {
   font-size: 2em;
   font-weight: bold;
   text-align: center;
+}
+
+/*score*/
+#score{
+  font-family: arial;
+  font-size: 50px;;
+  padding-left: 11%;
+  color:white;
+}
+
+/*inside buttons*/
+.guessWho{
+  font-size: 40px;
+  font-family: arial;
+  width: 79%;
+  padding: 10px;
+  margin:auto;
+}
+
+/*main title*/
+h1{
+  font-family: arial;
+  color: #fcbe03;
+  font-size: 80px;
+  padding-left: 10%;
+}
+
+/*buttons*/
+.guess.ui-button.ui-corner-all.ui-widget {
+  font-family: arial;
+  margin: 10px;
+  background-color: #fcbe03;
+  color: #FFF;
+  border: none;
 }
