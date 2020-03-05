@@ -12,27 +12,27 @@ to match your project! Write JavaScript to do amazing things below!
 
 // videos that will appear according to the number of the card that will be flipped
 let videoArray = [{
-    name: '1',
+    name: 'one',
     url: 'https://www.youtube.com/embed/BDRQdMufFL0',
     emotion: "bad"
   },
   {
-    name: '2',
+    name: 'two',
     url: 'https://www.youtube.com/embed/TdEk2mdSTG4',
     emotion: "bad"
   },
   {
-    name: '3',
+    name: 'three',
     url: 'https://www.youtube.com/embed/5ZCgbGgA-_8',
     emotion: "good"
   },
   {
-    name: '4',
+    name: 'four',
     url: 'https://www.youtube.com/embed/BHcFQ9gaMF4',
     emotion: "bad"
   },
   {
-    name: '5',
+    name: 'five',
     url: 'https://www.youtube.com/embed/DxNWbBXoKrg',
     emotion: "good"
   },
@@ -77,7 +77,7 @@ let videoArray = [{
 let goodCards;
 // declare bad videos
 let badCards;
-//score
+//declare score
 let score = 0;
 
 $(document).ready(setup);
@@ -114,18 +114,23 @@ function allVoiceCommands() {
     //Let the user guess Command
     let guessCard = {
       //number of the card
-      'Go with *number': function(number) {
-        if (videoArray[cardNum].emotion === bad) {
-          score++;
-          scoreDisplay(); //
-        } else {
-          score = 0;
-          scoreDisplay();
+      'Go with *number': function(cardNum) {
+        for(let i=0; i<videoArray.length;i++){
+          if(videoArray[i].name === cardNum){
+          if (videoArray[i].emotion === "bad") {
+            score++;
+            scoreDisplay(); //
+          } else {
+            score = 0;
+            scoreDisplay();
+        }
+        }
       }
     }
   };
   // All annyang Commands
   annyang.addCommands(guessCard);
   annyang.start();
+  annyang.debug(true);
 }
 } // end of voice commands
