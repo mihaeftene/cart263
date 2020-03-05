@@ -13,51 +13,63 @@ to match your project! Write JavaScript to do amazing things below!
 // videos that will appear according to the number of the card that will be flipped
 let videoArray = [{
     name: '1',
-    url: 'https://www.youtube.com/embed/BDRQdMufFL0'
+    url: 'https://www.youtube.com/embed/BDRQdMufFL0',
+    emotion: "bad"
   },
   {
     name: '2',
-    url: 'https://www.youtube.com/embed/TdEk2mdSTG4'
+    url: 'https://www.youtube.com/embed/TdEk2mdSTG4',
+    emotion: "bad"
   },
   {
     name: '3',
-    url: 'orange.jpg'
+    url: 'https://www.youtube.com/embed/5ZCgbGgA-_8',
+    emotion: "good"
   },
   {
     name: '4',
-    url: 'orange.jpg'
+    url: 'https://www.youtube.com/embed/BHcFQ9gaMF4',
+    emotion: "bad"
   },
   {
     name: '5',
-    url: 'orange.jpg'
+    url: 'https://www.youtube.com/embed/DxNWbBXoKrg',
+    emotion: "good"
   },
   {
     name: '6',
-    url: 'orange.jpg'
+    url: 'https://www.youtube.com/embed/pe0RxB3X6To',
+    emotion: "bad"
   },
   {
     name: '7',
-    url: 'orange.jpg'
+    url: 'https://www.youtube.com/embed/pTYVXOcDAjA',
+    emotion: "bad"
   },
   {
     name: '8',
-    url: 'https://www.youtube.com/watch?v=BHcFQ9gaMF4'
+    url: 'https://www.youtube.com/embed/RKdxvKRqeN8',
+    emotion: "bad"
   },
   {
     name: '9',
-    url: 'orange.jpg'
+    url: 'https://www.youtube.com/embed/wJwS1mfj6j4',
+    emotion: "good"
   },
   {
     name: '10',
-    url: 'orange.jpg'
+    url: 'https://www.youtube.com/embed/zJjgXxO0z-Q',
+    emotion: "bad"
   },
   {
     name: '11',
-    url: 'https://www.youtube.com/watch?v=C3c8fzbsfOE'
+    url: 'https://www.youtube.com/embed/JC2dQaqRuBY',
+    emotion: "bad"
   },
   {
     name: '12',
-    url: 'orange.jpg'
+    url: 'https://www.youtube.com/embed/B4ciM0nCLvA',
+    emotion: "bad"
   }
 ];
 
