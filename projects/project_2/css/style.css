@@ -1,1 +1,38 @@
 body {}
+
+  /* how big is the card */
+  #card-table {
+    width: 800px;
+    margin: 90px auto;
+  }
+
+  /* inside the card styling */
+  .card {
+    width: 12%;
+    float: left;
+    padding: 8% 5%;
+    margin: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #FF0000;
+  }
+
+  /* colours of the card */
+  /* .card:nth-child(1) {
+    background: green;
+  }
+
+  .card:nth-child(2) {
+    background: red;
+  }
+
+  .card:nth-child(3) {
+    background: purple;
+  }
+
+  .card:nth-child(4) {
+    background: blue;
+  } */
