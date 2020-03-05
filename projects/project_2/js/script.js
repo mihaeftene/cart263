@@ -73,6 +73,13 @@ let videoArray = [{
   }
 ];
 
+//declare good videos
+let goodCards;
+// declare bad videos
+let badCards;
+//score
+let score = 0;
+
 $(document).ready(setup);
 
 function setup() {
@@ -87,4 +94,38 @@ function setup() {
     let videoContainer = $('<iframe width="560" height="315" src="' + videoArray[cardNum].url + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
     $(this).append(videoContainer);
   }
+    allVoiceCommands();
+    scoreDisplay();
 }
+
+//scoreDisplay()
+// Created a tag to display the score
+function scoreDisplay() {
+  $("#score").text('Profit That Youtube And Google Made of off children:' + score);
+  let $setTheScore = $("#score");
+  console.log($setTheScore)
+}
+
+// Setting Annyang. The user can use his voice to flip a card by saying the number
+//allVoiceCommands()
+//Annyang voice commands and actions
+function allVoiceCommands() {
+  if (annyang) {
+    //Let the user guess Command
+    let guessCard = {
+      //number of the card
+      'Go with *number': function(number) {
+        if (videoArray[cardNum].emotion === bad) {
+          score++;
+          scoreDisplay(); //
+        } else {
+          score = 0;
+          scoreDisplay();
+      }
+    }
+  };
+  // All annyang Commands
+  annyang.addCommands(guessCard);
+  annyang.start();
+}
+} // end of voice commands
