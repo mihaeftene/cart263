@@ -14,5 +14,13 @@ $(document).ready(setup);
 
 
 function setup() {
+clickHandler();
+}
 
+// handles the flipping of the video
+function clickHandler() {
+  $('.card').on('click', function() {
+    $('.card').text('1');
+    $(this).text("up");
+  });
 }
