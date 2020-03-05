@@ -1,9 +1,12 @@
-body {}
+body {
+  background-color: black;
+}
 
   /* how big is the card */
   #card-table {
     width: 800px;
     margin: 90px auto;
+    padding-bottom: 40%;
   }
 
   /* inside the card styling */
@@ -36,3 +39,16 @@ body {}
   .card:nth-child(4) {
     background: blue;
   } */
+
+/* instructions block */
+#instructions{
+  width: 750px;
+  margin: 90px auto;
+  color:white;
+  font-family: arial;
+  font-size: 20px;
+}
+/* logo DoomTube */
+#logo{
+  width: 600px;
+}
