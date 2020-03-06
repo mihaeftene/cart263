@@ -122,7 +122,6 @@ function setup() {
 function scoreDisplay() {
   $("#score").text('Profit That Youtube And Google makes of off childrens videos (In millions):' + score);
   let $setTheScore = $("#score");
-  console.log($setTheScore)
 }
 
 
