@@ -76,6 +76,10 @@ let videoArray = [{
 //declare score
 let score = 0;
 
+//declare the sound that will be used once the user gets a bad card
+let flipSFX = new Audio("assets/sounds/noMercy.wav");
+
+// what will show when the page is loaded
 $(document).ready(setup);
 
 
@@ -87,6 +91,7 @@ function setup() {
 
 
   //clickHandler()
+  //To make Annyang flip the card, there's a need for a click so once the user asks Annyang to flip a certain card it will.
   function clickHandler() {
     //the card will flip
     $(this).flip();
@@ -94,10 +99,14 @@ function setup() {
     let cardNum = $(this).attr("id");
     //show the video based on the url shown in the array
     let videoContainer = $('<iframe class = "test"  src="' + videoArray[cardNum].url + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+    //append the children to the videoContrainer
     $(this).children(".back").append(videoContainer);
+    //if the video that the user is considered as bad (Look through the array), it will add +1 (in millions) to the score. (YES THEY MAKE THAT MUCH PROFIT :)
     if (videoArray[cardNum].emotion === "bad") {
       score++;
       scoreDisplay();
+      //play sound once a bad card has been activated
+      flipSFX.play();
     }
   }
   allVoiceCommands();
@@ -108,7 +117,7 @@ function setup() {
 //scoreDisplay()
 // Created a tag to display the score
 function scoreDisplay() {
-  $("#score").text('Profit That Youtube And Google Made of off children (In millions):' + score);
+  $("#score").text('Profit That Youtube And Google Makes of off childrens videos (In millions):' + score);
   let $setTheScore = $("#score");
   console.log($setTheScore)
 }
