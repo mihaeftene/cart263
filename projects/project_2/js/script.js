@@ -97,7 +97,7 @@ function setup() {
     //select attribute based on the id of the card
     let cardNum = $(this).attr("id");
     //show the video based on the url shown in the array
-    let videoContainer = $('<iframe class = "test"  src="' + videoArray[cardNum].url + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+    let videoContainer = $('<iframe class = "video"  src="' + videoArray[cardNum].url + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
     //append the children to the videoContrainer
     $(this).children(".back").append(videoContainer);
     //if the video that the user is considered as bad (Look through the array), it will add +1 (in millions) to the score. (YES THEY MAKE THAT MUCH PROFIT :)
