@@ -2,11 +2,10 @@
 
 /********************************************************************
 
-Name of the Project
+DoomTube
 Mihaela Eftene
 
-This is a template. Fill in the title, author, and this description
-to match your project! Write JavaScript to do amazing things below!
+DoomTube is a card game based on the hidden reality that Youtube does not show. The player has 12 identical red cards which represent innocence (Children think that everything looks okay, the same). Each card has a number on it. Once the user is ready to play, he will say “go with” and then the number that he wants. Because this game has an API called Annyang which will detect words, the card will flip depending on the number of the card that the user wants. For people that Annyang might not work, they can just click on the cards. Once the card has been flipped, he will see a video which could be considered either as good or bad. If it's bad, a certain voice that says “No Mercy” will activate to showcase that Youtube only cares for profit which is when that concept of innocence will disappear. Once activated, the score at the top will go up by 1 million every time that the user gets a bad card which shows the monstrous amount of profit that Youtube or Google makes of off children’s videos. However, if the user falls on a good video, the profit will drop to 0 because they are seen as legit videos (only a few).
 
 *********************************************************************/
 
@@ -23,7 +22,7 @@ let videoArray = [{
   },
   {
     name: 'three',
-    url: 'https://www.youtube.com/embed/5ZCgbGgA-_8',
+    url: 'https://www.youtube.com/embed/IVy42rWmFLc',
     emotion: "good"
   },
   {
@@ -91,7 +90,7 @@ function setup() {
 
 
   //clickHandler()
-  //To make Annyang flip the card, there's a need for a click so once the user asks Annyang to flip a certain card it will.
+  //To make Annyang flip the card, there's a need for a click so once the user asks Annyang to flip a certain card it will. For those that Annyang does not work, they can just click on the cards
   function clickHandler() {
     //the card will flip
     $(this).flip();
@@ -107,6 +106,10 @@ function setup() {
       scoreDisplay();
       //play sound once a bad card has been activated
       flipSFX.play();
+      //the amount of profit drops at 0
+    } else {
+      score = 0;
+      scoreDisplay();
     }
   }
   allVoiceCommands();
@@ -117,7 +120,7 @@ function setup() {
 //scoreDisplay()
 // Created a tag to display the score
 function scoreDisplay() {
-  $("#score").text('Profit That Youtube And Google Makes of off childrens videos (In millions):' + score);
+  $("#score").text('Profit That Youtube And Google makes of off childrens videos (In millions):' + score);
   let $setTheScore = $("#score");
   console.log($setTheScore)
 }
@@ -144,6 +147,7 @@ function checkCard(cardNum) {
   //go through all the array and look
   for (let i = 0; i < videoArray.length; i++) {
     //
+    //look through the whole array and get the element by Id that correspond with the card.
     if (videoArray[i].name === cardNum) {
       document.getElementById(i).click();
     }
