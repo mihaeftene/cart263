@@ -2,53 +2,45 @@ body {
   background-color: black;
 }
 
-  /* how big is the card */
-  #card-table {
-    width: 800px;
-    margin: 90px auto;
-    padding-bottom: 40%;
-  }
+/* how big is the card */
+#card-table {
+  width: 800px;
+  margin: 90px auto;
+  padding-bottom: 40%;
+}
 
-  /* inside the card styling */
-  .card {
-    width: 12%;
-    float: left;
-    padding: 8% 5%;
-    margin: 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 40px;
-    cursor: pointer;
-    text-align: center;
-    background-color: #FF0000;
-  }
+/* inside the card styling */
+.card {
+  width: 159px;
+  height: 140px;
+  float: left;
+  padding: 8% 5%;
+  margin: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  cursor: pointer;
+  text-align: center;
+  background-color: #FF0000;
+}
 
-  /* colours of the card */
-  /* .card:nth-child(1) {
-    background: green;
-  }
-
-  .card:nth-child(2) {
-    background: red;
-  }
-
-  .card:nth-child(3) {
-    background: purple;
-  }
-
-  .card:nth-child(4) {
-    background: blue;
-  } */
+.test {
+  width: 160px;
+  height: 160px;
+  padding-right: 10%;
+}
 
 /* instructions block */
-#instructions{
+#instructions {
   width: 750px;
   margin: 90px auto;
-  color:white;
+  color: white;
   font-family: arial;
   font-size: 20px;
 }
+
 /* logo DoomTube */
-#logo{
+#logo {
   width: 600px;
 }
