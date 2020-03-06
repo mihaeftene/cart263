@@ -78,11 +78,15 @@ let score = 0;
 
 $(document).ready(setup);
 
+
+//setup()
 function setup() {
   // handles the flipping of the video
   $(".card").flip();
   $('.card').on('click', clickHandler);
 
+
+  //clickHandler()
   function clickHandler() {
     //the card will flip
     $(this).flip();
@@ -100,13 +104,15 @@ function setup() {
   scoreDisplay();
 }
 
+
 //scoreDisplay()
 // Created a tag to display the score
 function scoreDisplay() {
-  $("#score").text('Profit That Youtube And Google Made of off children(In millions):' + score);
+  $("#score").text('Profit That Youtube And Google Made of off children (In millions):' + score);
   let $setTheScore = $("#score");
   console.log($setTheScore)
 }
+
 
 // Setting Annyang. The user can use his voice to flip a card by saying the number
 //allVoiceCommands()
@@ -120,9 +126,10 @@ function allVoiceCommands() {
     // All annyang Commands
     annyang.addCommands(guessCard);
     annyang.start();
-    annyang.debug(true);
   };
 }
+
+
 //checkCard()
 function checkCard(cardNum) {
   //go through all the array and look
