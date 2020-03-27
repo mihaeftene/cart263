@@ -49,6 +49,14 @@ function gotData(data) {
   // Now the cat
   let cat = getRandomElement(data.cats);
 
+  // check the correct article. If the indefinite article starts with one of those vowels (A,E,I,O,U), use an. Else use a
+  let article = 'a';
+  if (cat.charAt(0) === 'A' || cat.charAt(0) === 'E' || cat.charAt(0) === 'I' || cat.charAt(0) === 'O' || cat.charAt(0) === 'U') {
+    article = 'an';
+  } else {
+    article = 'a'
+  };
+
   // Same again for room
   let room = getRandomElement(data.rooms);
 
