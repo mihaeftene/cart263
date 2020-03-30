@@ -6,10 +6,25 @@ Pippin Barr
 Basic CSS
 
 */
-
 body {
   margin: 2em;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 4em;
   font-weight: bold;
+  background-color: #fff;
+  -webkit-animation: random 5s infinite;
+  animation: random 5s infinite;
+}
+
+/* generates colours */
+@keyframes  random {
+    15% { background-color: #FFB6C1; }
+    30% { background-color: #FFA07A; }
+    45% { background-color: #FFA500; }
+    60% { background-color: #FFD700; }
+    75% { background-color: #ADFF2F; }
+}
+
+h1{
+  font-family: 'Playfair Display', serif;
 }
