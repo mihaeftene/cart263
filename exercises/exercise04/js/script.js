@@ -12,7 +12,6 @@ Corpora
 https://github.com/dariusk/corpora
 
 */
-
 $(document).ready(function() {
 
   // The first thing we need to do is load the data we're going
@@ -24,6 +23,11 @@ $(document).ready(function() {
   $.getJSON('data/data.json')
     .done(gotData)
     .fail(dataError);
+});
+
+//refreshing the page including the sentence displayed once the page has been clicked.
+$(document).click(function() {
+  location.reload(true);
 });
 
 // gotData (data)
