@@ -2,6 +2,7 @@
 
 Condiments
 Pippin Barr
+Edited By Mihaela Eftene
 
 Chooses random words from local JSON data to fill out a sentence
 describing a condiment based on cats and rooms... weird.

@@ -1,7 +1,7 @@
 /*
 
 Condiments
-Pippin Barr
+Pippin Barr (Edited By Mihaela Eftene)
 
 Basic CSS
 
@@ -17,14 +17,29 @@ body {
 }
 
 /* generates colours */
-@keyframes  random {
-    15% { background-color: #FFB6C1; }
-    30% { background-color: #FFA07A; }
-    45% { background-color: #FFA500; }
-    60% { background-color: #FFD700; }
-    75% { background-color: #ADFF2F; }
+@keyframes random {
+  15% {
+    background-color: #FFB6C1;
+  }
+
+  30% {
+    background-color: #FFA07A;
+  }
+
+  45% {
+    background-color: #FFA500;
+  }
+
+  60% {
+    background-color: #FFD700;
+  }
+
+  75% {
+    background-color: #ADFF2F;
+  }
 }
 
-h1{
+/* title */
+h1 {
   font-family: 'Playfair Display', serif;
 }
